@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>입력 양식 태그</title>
+</head>
+
+<body>
+    <h2>입력 양식 태그 실습</h2>
+    <form>
+        <fieldset>
+        <legend>기본 정보</legend>
+        <label for="email">이메일</label>
+        <input id="email" type="email" name="email" placeholder="이메일 입력"><br>
+
+        <label for="password">비밀번호</label>
+        <input id="password" type="password" name="password" placeholder="비밀번호 입력"><br>
+
+        <label for="confirm-password">비밀번호 확인</label>
+        <input id="confirm-password" type="password" name="password" placeholder="비밀번호 재입력"><br>
+
+        <label for="birth">생일</label>
+        <input id="birth" type="birth" name="birth" placeholder="생년월일 입력"><br>
+
+        <input id="male" type="radio" name="gender" value="male">
+        <label for="male">남</label>
+
+        <input id="female" type="radio" name="gender" value="female">
+        <label for="female">여</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>추가 정보</legend>
+
+            <label for="hobbies">취미 선택</label><br>
+            <select id="hobbies" name="hobby" multiple>
+                <option value="html">HTML</option>
+                <option value="css">CSS</option>
+                <option value="js">Javascript</option>
+                <option value="node">Node.js</option>
+                <option value="db">Database</option>
+            </select><br>
+
+            <label for="intro">소개글</label><br>
+            <textarea id="intro" name="intro"
+            cols="50" rows="4" placeholder="200자 이내로 입력"></textarea>
+        </fieldset>
+
+        <input type="submit" value="회원가입">
+        <!-- <button type="submit">회원가입</button> -->
+    </form>
+    <a href="./">홈으로 이동</a>
+</body>
+
+</html>
