@@ -142,8 +142,8 @@
 6. disabled: input태그의 disabled속성과 동일
 
 <label 태그>
-1. for : label과 연결할 입력 양식 태그를 설정
-    (입력 양식의 id속성값)
+1. for : label과 연결할 입력 양식 태그를   
+    설정(입력 양식의 id속성값)
 
 <fieldset 태그>
 1. fieldset : 입력 양식들을 하나의 그룹으로 묶기 위해 사용
