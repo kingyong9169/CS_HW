@@ -1,10 +1,10 @@
 #week3
--Points, Lines, LineStrip, LineLoop
--TriangleFan, Triangles, TriangleStrip
--Polygons, Quads, QuadStrip
+1. Points, Lines, LineStrip, LineLoop
+2. TriangleFan, Triangles, TriangleStrip
+3. Polygons, Quads, QuadStrip
 
 #week 4
--Sphere
--Cylinder
--Disk
--Partial Disk
+1. Sphere
+2. Cylinder
+3. Disk
+4. Partial Disk
