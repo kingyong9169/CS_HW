@@ -1,4 +1,4 @@
-#week3
+#week 3
 1. Points, Lines, LineStrip, LineLoop
 2. TriangleFan, Triangles, TriangleStrip
 3. Polygons, Quads, QuadStrip
