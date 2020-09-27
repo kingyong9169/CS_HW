@@ -1,4 +1,4 @@
-/*#include <iostream>
+#include <iostream>
 
 using namespace std;
 
@@ -6,7 +6,7 @@ int n, m;
 int u, v;
 int count_space, count_adjacent, count_adj;
 int main() {
-	cout << "Á¤Á¡ÀÇ ¼ö¿Í °£¼±ÀÇ ¼ö¸¦ ÀÔ·ÂÇÏ½Ã¿À.";
+	cout << "ì •ì ì˜ ìˆ˜ì™€ ê°„ì„ ì˜ ìˆ˜ë¥¼ ìž…ë ¥í•˜ì‹œì˜¤.";
 	cin >> n >> m;
 	int** matrix;
 	matrix = new int*[n];
@@ -19,7 +19,7 @@ int main() {
 		}
 	for (int i = 0; i < m; i++)
 	{
-		cout << "°£¼±À» ÀÔ·ÂÇÏ½Ã¿À.";
+		cout << "ê°„ì„ ì„ ìž…ë ¥í•˜ì‹œì˜¤.";
 		int s, e;
 		cin >> s >> e;
 		matrix[s][e] = 1;
@@ -30,16 +30,16 @@ int main() {
 			cout << matrix[i][j] << " ";
 		cout << endl;
 	}
-	cout << "ÀÎÁ¢¸®½ºÆ®°¡ Â÷ÁöÇÏ´Â °ø°£(n*n) : " << count_space << endl;
-	cout << "Vertex u¿Í v°¡ adjacentÇÑÁö Ã¼Å©ÇÏ·Á¸é u,v¸¦ ÀÔ·ÂÇÏ½Ã¿À.";
+	cout << "ì¸ì ‘ë¦¬ìŠ¤íŠ¸ê°€ ì°¨ì§€í•˜ëŠ” ê³µê°„(n*n) : " << count_space << endl;
+	cout << "Vertex uì™€ vê°€ adjacentí•œì§€ ì²´í¬í•˜ë ¤ë©´ u,vë¥¼ ìž…ë ¥í•˜ì‹œì˜¤.";
 	cin >> u >> v;
 	if (matrix[u][v] == 1|| matrix[u][v] == 0)
 		count_adjacent++;
 	cout << "time complexity : " << count_adjacent << endl;
-	cout << "Vertex u¿Í adjacentÇÑ ¸ðµç vertexÅ½»öÀ» À§ÇØ u¸¦ ÀÔ·ÂÇÏ½Ã¿À.";
+	cout << "Vertex uì™€ adjacentí•œ ëª¨ë“  vertexíƒìƒ‰ì„ ìœ„í•´ uë¥¼ ìž…ë ¥í•˜ì‹œì˜¤.";
 	cin >> u;
 	for (int j = 0; j < n; j++)
 		count_adj++;
 	cout << "time complexity : " << count_adj << endl;
 	cout << "deg(u) : " << count_adj;
-}*/
+}
