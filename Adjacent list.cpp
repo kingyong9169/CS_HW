@@ -1,4 +1,4 @@
-/*#define N 5
+#define N 5
 #include <iostream>
 using namespace std;
 
@@ -57,7 +57,7 @@ public:
 
 ostream& operator<<(ostream& os, LinkedGraph& lg)
 {
-	os << "°¢ ²ÀÁþÁ¡¿¡ ¿¬°áµÇ¾î ÀÖ´Â ²ÀÁþÁ¡À» Ãâ·Â" << endl;
+	os << "ê° ê¼­ì§“ì ì— ì—°ê²°ë˜ì–´ ìžˆëŠ” ê¼­ì§“ì ì„ ì¶œë ¥" << endl;
 	for (int i = 0; i < lg.n; i++)
 	{
 		Node* temp = lg.list[i].first;
@@ -83,8 +83,8 @@ int main(void)
 		}
 	}
 	cout << lg;
-	cout << "ÀÎÁ¢¸®½ºÆ®°¡ Â÷ÁöÇÏ´Â °ø°£(count_vertex + count_edge) : " << count_vertex + count_edge<<endl;
-	cout << "Vertex u¿Í v°¡ adjacentÇÑÁö Ã¼Å©ÇÏ·Á¸é u,v¸¦ ÀÔ·ÂÇÏ½Ã¿À.";
+	cout << "ì¸ì ‘ë¦¬ìŠ¤íŠ¸ê°€ ì°¨ì§€í•˜ëŠ” ê³µê°„(count_vertex + count_edge) : " << count_vertex + count_edge<<endl;
+	cout << "Vertex uì™€ vê°€ adjacentí•œì§€ ì²´í¬í•˜ë ¤ë©´ u,vë¥¼ ìž…ë ¥í•˜ì‹œì˜¤.";
 	cin >> u>>v;
 	Node* temp1 = lg.list[u].first;
 	while (temp1)
@@ -94,12 +94,12 @@ int main(void)
 	}
 	cout << "time complexity : "<<count_adj<<endl;
 
-	cout << "Vertex u¿Í adjacentÇÑ ¸ðµç vertexÅ½»öÀ» À§ÇØ u¸¦ ÀÔ·ÂÇÏ½Ã¿À.";
+	cout << "Vertex uì™€ adjacentí•œ ëª¨ë“  vertexíƒìƒ‰ì„ ìœ„í•´ uë¥¼ ìž…ë ¥í•˜ì‹œì˜¤.";
 	cin >> u;
 	Node* temp3 = lg.list[u].first;
 	while (temp3)
 	{
-		cout << "ÀÎÁ¢ÇÑ vertex : "<<temp3->vertex << " ";
+		cout << "ì¸ì ‘í•œ vertex : "<<temp3->vertex << " ";
 		temp3 = temp3->next;
 		count_uvertex++;
 	}
@@ -107,4 +107,4 @@ int main(void)
 	cout << "time complexity : "<<count_uvertex<<endl;
 	cout << "deg(u) : "<<count_uvertex;
 	return 0;
-}*/
+}
