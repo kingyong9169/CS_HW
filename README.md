@@ -10,7 +10,7 @@
 
 ##2 아이템 박스에 사진 및 문구 넣기
 1. display : flex로 남은 공간에 컨텐츠 정렬 가능
-2. <div class="item box box1">의 자식 div생성
+2. div class="item box box1"의 자식 div생성
 3. position : relative로 부모div위치 상태를 기준으로 위치 좌표 설정
 
 ##3 텍스트 박스
