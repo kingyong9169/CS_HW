@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>WEB_HW3</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/basic.css">
+    <link rel="stylesheet" href="css/gallery.css">
+    <link rel="stylesheet" href="css/banner.css">
+</head>
+
+<body>
+    <header>
+        <button id="menu-button">
+            <!-- 메뉴버튼 -->
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </button>
+        <h5>International</h5>
+    </header>
+
+    <nav id="side-menu" class="hidden">
+        <!-- 메뉴내용 -->
+        <ul>
+            <li><a href="#">Seoul</a></li>
+            <li><a href="#">Busan</a></li>
+            <li><a href="#">New York</a></li>
+            <li><a href="#">Paris</a></li>
+            <li><a href="#">Berlin</a></li>
+            <li><a href="#">Sydney</a></li>
+            <li><a href="#">Tokyo</a></li>
+            <li><a href="#">London</a></li>
+        </ul>
+    </nav>
+
+    <script>  /*javascript코드*/
+        let hidden = true;
+        const menuButton = document.getElementById("menu-button");
+        const sideMenu = document.getElementById("side-menu");
+
+        menuButton.addEventListener('click', () => {
+            if (hidden) {
+                sideMenu.classList.remove("hidden");
+                hidden = false;
+            } else {
+                sideMenu.classList.add("hidden");
+                hidden = true;
+            }
+        });
+    </script>
+    <div class="contain">
+        <h1>Just do it! Go right now!</h1>
+        <h3>Do it right when you do it.</h3>
+    </div>
+
+    <div class="container">
+        <img src="https://i.pinimg.com/originals/ec/0f/eb/ec0feb762baacb02ca3200093b6a6081.gif" class="opacity">
+        <img
+            src="https://lh3.googleusercontent.com/proxy/mYFsE7TKaTf58G5LAZedXhI3UhA-2ryv_ANCO7MWAxsNOzhA6aVpKfCHl9OxdI55vQCEwH3auOISchyM-miSW-iuRkqpFSxKleKjOUmpo4xM2lkP1Ix_Z29SvqhEs0-i78FLHDQ8S22U3RwYyk9-h1tPxuU70QhAdmP3dMPoDBcuC4xNzJ4_ggGLTd8cgy9lVDylEQKP7XPuuUg7Q8Lx6YcSbXk834JHz_t4JlGEL5o4GP1Xri42632t1cz8gcMhL48cBcOAPuaNsxn6iX85Bbr_iMcXHDz1S_6hNhwrZYygkwN3LMiLx1Ao9Q">
+        <img src="https://lh3.googleusercontent.com/proxy/gkSM_gD2pWk7e6RHM-Le-1C_wv4KZ_y0Q-ASxJWP9sdxT0tHyxmRN768TftChz3EFh4nrxELGA_jjDzeoVpHJVw2VBrpOKkA3Tzci7J1GDvz_PPzA6x7U09ykQy6auyKLIWv86km1oDzfCG8DvWqufXqVQPrF3CnduEWmMhPLs19T6q3c1Kcr1Gs31otJyS0AJaAVmo_Je2FOBoDIUgH-GivrGWpYcyyRtBINQ4nte3IkPjxqhMSU30-SzK-SUuod238S-9nIRAaTBGTM82kdhn-eQlj3wfZIQ5XllqVR0IPW_Tri1kvpDpe">
+        <img src="https://media4.giphy.com/media/gIwTH6UWB4SlwxNJIs/200.gif">
+    </div>
+    <div class="text box">
+        <div class="text item item1">
+            <h2>Placeskateboards</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni enim animi asperiores. Architecto facilis
+                quae deleniti expedita magni ipsum est eum, quo rem blanditiis possimus reprehenderit! Quaerat nobis
+                architecto eum corrupti asperiores deserunt pariatur illum, quasi quas aliquam earum doloribus ducimus
+                hic quam ut a. Libero voluptas nesciunt nulla expedita nisi consequuntur nihil neque maiores, qui culpa
+                reprehenderit facilis quia repellat corrupti sunt suscipit aperiam maxime magnam officia exercitationem
+                eius ullam eum vel aliquid. Molestiae nostrum sapiente fugit minima sed corrupti. Commodi praesentium,
+                reiciendis velit voluptates repellendus vero amet, aliquid temporibus neque culpa corporis ducimus
+                suscipit? Rem, distinctio adipisci nostrum quod officiis explicabo tempore, veritatis eligendi quis
+                pariatur est hic in quae. Sed pariatur beatae velit dolore nisi illo perferendis.</p>
+        </div>
+        <div class="text item item2">
+            <h2>Supreme</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio exercitationem temporibus, ad,
+                asperiores neque ratione sed quas repellendus aliquid culpa veniam deserunt, consequatur eius cumque
+                libero minima magnam dolorum. Soluta magni neque cumque. Hic omnis cum optio iusto? Sequi, adipisci
+                omnis! Cum quibusdam reprehenderit quis maxime vero totam vel quisquam libero! Provident expedita
+                dolorum, ad optio fugit impedit earum similique officiis ullam vel corporis! Rem nulla deleniti suscipit
+                excepturi, ab delectus similique molestias itaque nobis unde commodi distinctio saepe dolorem?</p>
+        </div>
+    </div>
+    <div class="box3">
+        <img class="item pic pic2 left-float"
+            src="https://img1.daumcdn.net/thumb/R720x0.q80/?scode=mtistory2&fname=http%3A%2F%2Fcfile5.uf.tistory.com%2Fimage%2F2324B645595CC174104F99">
+        <h2>A bathing ape</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima earum qui rerum velit atque voluptatem quo
+            dignissimos unde voluptas non, maxime minus eaque praesentium deserunt error eum totam aliquid sunt dolorem
+            mollitia! Asperiores placeat commodi unde eaque qui assumenda quos, amet voluptatem voluptatum, aliquam
+            laboriosam? Doloremque a unde ratione eaque enim pariatur veritatis. Obcaecati et nesciunt ab, eum illo a
+            itaque officia labore tenetur placeat eveniet quia dignissimos sed. Illo ipsa ut earum veniam inventore
+            vitae! Temporibus porro ipsum dignissimos nulla veritatis, praesentium natus ipsa voluptatem odit sunt at
+            excepturi non nisi rerum quia expedita laboriosam culpa vel dolorum dolore ad. Autem quasi voluptatem
+            accusamus molestiae laboriosam, fugit ad maxime quisquam tempora maiores deleniti mollitia doloremque?
+            Consequatur in vel recusandae illo iusto eligendi sunt illum ad minima inventore nesciunt sapiente,
+            consequuntur, tempore repellat omnis quam corporis incidunt distinctio excepturi unde.</p>
+    </div>
+    <div class="item box box2 pic3">
+</body>
+
+</html>

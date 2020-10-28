@@ -1,0 +1,49 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.contain{
+    width: 100%;
+    height: 300px;
+    transition-duration: 1s;
+    background-color: rgba(0,0,0,0);
+    background-image: url(https://images.palaceskateboards.com/wp-content/uploads/2017/04/PALACE_STORE24061.jpg);
+    background-blend-mode: overlay;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    overflow: hidden;
+}
+
+.contain:hover {
+    height: 400px;
+}
+
+.contain > *{
+    position: absolute;
+}
+.contain > h1{
+    top: 80px;
+    left: 50px;
+    color: black;
+    animation: slide 3s;
+}
+
+.contain >h3{
+    top: 150px;
+    left: 60px;
+    width: 40%;
+    color: black;
+    animation: opacity 3s;
+}
+
+@keyframes banner-title{
+    from{left:-50%;}
+    to{left: 50px;}
+}
+
+@keyframes banner-content{
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
