@@ -28,12 +28,12 @@ function search(keyword, currentPage = 1, countPerPage = 10) { //1페이지 당 
         resultType: 'json' //json형식으로 결과를 받는다
     };
 
-    const body = Object.keys(data).map(key => `${key}=${data[key]}`).join('&');
+    const body = Object.keys(data).map(key => `${key}=${data[key]}`).join('&'); //data를 (key & key의 값)형식으로 묶어서 맵핑하여 문자열로 가져온다
 
     const options = {
-        method: 'POST',
-        body,
-        headers: {
+        method: 'POST', //POST방법으로
+        body, //body
+        headers: { //headers의 콘텐츠 타입은 다음과 같다
             'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
         }
     };

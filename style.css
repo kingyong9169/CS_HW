@@ -117,9 +117,3 @@ form>button:hover {
     background-color: white;
     cursor: pointer;
 }
-.end-message {
-    margin: 20px;
-    padding: 20px;
-    text-align: center;
-    font-family: 'Nanum Gothic', sans-serif;
-}
