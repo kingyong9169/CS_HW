@@ -16,6 +16,9 @@
 5. redo버튼은 뒤로 되돌아가기 기능입니다.
 6. upload버튼은 pc에서 사진을 업로드할 수 있는 기능입니다. 또한, 사진을 자유롭게 이동할 수 있습니다.
 
+## composer.json
+1. heroku가 어떤 언어로 개발된 프로젝트인지 몰라서 바로 구동되지 않으므로 php파일을 만들어 header('location: 'index.html')을 넣어 html파일을 실행하도록 설정합니다.
+
 ## index.html
 1. 웹페이지 상단에 menu를 생성하였고 먼저 pencil 툴을 넣었습니다. pencil이미지를 삽입하고 pencil을 클릭하면 handletoolchange이벤트가 발생하도록하여 tool options으로 pencil의 사이즈를 5~30까지 변화시키며 이 값을 size1으로 지정하였습니다. 또한, pencil의 컬러를 변화시키는 이벤트인 handlecolorchange이벤트를 지정하였고 각 버튼을 구성하였습니다.
 2. eraser 툴을 넣어 이미지를 삽입하고 클릭 이벤트가 발생하면 handletoolchange이벤트를 전달하여 eraser의 크기를 50~300까지 변화를 주었고 이를 size2로 지정하였습니다.
