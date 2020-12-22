@@ -1,4 +1,4 @@
-const express = require("express"); //
+const express = require("express"); //express모듈사용
 const app = express(); //express Application객체 생성
 const server = require("http").Server(app); //express로 웹 서버 실행
 const io = require("socket.io")(server); //socket.io서버 생성
