@@ -1,4 +1,4 @@
-const socket = io.connect("https://mydrawboard.herokuapp.com/"); //io에 허로쿠로 만든 주소를 연결하여 socket에 넣어준다
+const socket = io.connect("https://webtermproject.herokuapp.com/public/index.html"); //io에 허로쿠로 만든 주소를 연결하여 socket에 넣어준다
 const board = document.querySelector(".board"); //board선택자를 선택하여 board에 저장
 var rect = board.getBoundingClientRect(); //rect에 뷰포트에서 상대적인 엘리먼트의 크기를 리턴한 값을 저장
 board.height = window.innerHeight; //board의 높이에 window의 창 틀을 뺀 내용의 높이를 넣는다 
