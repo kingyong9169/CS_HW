@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>whiteboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class= "Menu">
+        <div class = "Tool">
+            <img src="/NewIcons/Black_Pencil.svg" alt="" onclick="handleToolChange('Pencil')">
+            <div class="Tool-options Pencil">
+                <div class="Pencil-size">
+                    <input type="range" id="size1" min="5" max="30" value="5">
+                </div>
+                <div class="Pencil-color">
+                    <div class="Color Red" onclick="handleColorChange('Red')"></div>
+                    <div class="Color Green" onclick="handleColorChange('Green')"></div>
+                    <div class="Color Blue" onclick="handleColorChange('Blue')"></div>
+
+                </div>
+            </div>
+        </div> 
+        <div class="Tool">
+            <img src="/NewIcons/Eraser.svg" alt=""  onclick="handleToolChange('Eraser')">
+            <div class="Tool-options Eraser">
+                <div class="Eraser-size">
+                    <input type="range" id="size2" min="50" max="300" value="50">
+                </div>
+            </div>
+        </div>
+        <div class="Tool">
+            <img src="/NewIcons/StickyNote.svg" alt="" onclick="handleToolChange('Sticky')">
+        </div>
+        <div class="Tool">
+            <img src="/NewIcons/Redo.svg" alt="" class="redo">
+        </div>
+        <div class="Tool">
+            <img src="/NewIcons/Undo.svg" alt="" class = "undo">
+        </div>
+        <div class="Tool">
+            <img src="/NewIcons/Photo.svg" alt="" class="UploadTool">
+            <input type="file" accept="file_extension|image/*" class="UploadInput">
+        </div>
+        <div class="Tool">
+            <img src="/NewIcons/Download.svg" alt="">
+        </div>
+        <div class="Tool">
+            <img src="/NewIcons/Glass.svg" alt="">
+        </div>
+        
+    </div>
+    <canvas class="board">
+    </canvas>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.dev.js " 
+    crossorigin ></script>
+    <script src="script.js"></script>
+    <script src="canvas.js"></script>
+    <script src="sticky.js"></script>
+    <script src="upload.js"></script>
+    <script src="receiver.js"></script>
+</body>
+</html>
