@@ -1,0 +1,46 @@
+*{
+    padding-left: 3px;
+    margin: 0px;
+}
+
+#survey{
+    background-image: url(stussy.png);
+    background-size: 80% 400px;
+    background-repeat: no-repeat;
+}
+
+label, caption{
+    font-style:italic;
+    color: rgb(13, 241, 203);
+    text-shadow: 5px 5px 5px aquamarine;
+}
+
+.txtst{
+    text-shadow: 5px 5px 5px aquamarine;
+    font: bold 30px arial, sans-serif;
+}
+
+.about_li{
+    color:grey;
+    background-color: rgb(233, 206, 125);
+}
+
+.about_li2{
+    color:black;
+    background-color: rgb(21, 214, 205);
+}
+
+.about{
+    background-image: url(sea.png);
+    text-shadow: 5px 5px 5px aquamarine;
+}
+
+table{
+    border-collapse: collapse;
+}
+
+td, th{
+    border: 2px solid aqua;
+    color: blanchedalmond;
+    text-shadow: 3px 3px 3px black;
+}
