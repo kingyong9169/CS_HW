@@ -1,128 +1,131 @@
-#include <stdio.h> //Ç¥ÁØÀÔÃâ·Â Çì´õÆÄÀÏ
-#include <ctype.h> //getc»ç¿ë
+#include <stdio.h> //í‘œì¤€ì…ì¶œë ¥ í—¤ë”íŒŒì¼
+#include <ctype.h> //getcì‚¬ìš©
 
-char lookahead; //¹®ÀÚ¸¦ ÀĞÀ» º¯¼ö
+char lookahead; //ë¬¸ìë¥¼ ì½ì„ ë³€ìˆ˜
 
-void expr(); //ÇÔ¼ö Á¤ÀÇ
+void expr(); //í•¨ìˆ˜ ì •ì˜
 void exprx();
 void term();
 void termx();
 void termx();
 void factor();
 
-int main() { //¸ŞÀÎ ÇÔ¼ö
+int main() { //ë©”ì¸ í•¨ìˆ˜
 	while (1) {
-		if (lookahead == '$') { //¹®ÀÚ°¡ $ÀÌ¸é
-			printf("\ncorrect!\n"); //correctÃâ·Â
-			return 0; //Á¾·á
+		if (lookahead == '$') { //ë¬¸ìê°€ $ì´ë©´
+			printf("\ncorrect!\n"); //correctì¶œë ¥
+			return 0; //ì¢…ë£Œ
 		}
-		if(lookahead!=' ') //ÅäÅ« ºĞ¸®¸¦ ÇÏÁö ¾Ê´Â´Ù¸é
-			lookahead = getc(stdin); //´ÙÀ½ ¹®ÀÚ¸¦ ÀĞ´Â´Ù.
-		expr(); //exprÈ£Ãâ
+		lookahead = getc(stdin); //ë‹¤ìŒ ë¬¸ìë¥¼ ì½ëŠ”ë‹¤.
+		expr(); //exprí˜¸ì¶œ
 	}
 }
 
-void expr() { //exprÇÔ¼ö
-	printf("1 "); //¹®¹ı 1¹ø
-	term(); //termÈ£Ãâ
-	exprx(); //exprxÈ£Ãâ
+void expr() { //exprí•¨ìˆ˜
+	printf("1 "); //ë¬¸ë²• 1ë²ˆ
+	term(); //termí˜¸ì¶œ
+	exprx(); //exprxí˜¸ì¶œ
 }
 
-void exprx() { //exprxÇÔ¼ö
-	if (lookahead == '+') { //+ÀÌ¸é
-		printf("2 "); //2¹ø ¹®¹ı
-		lookahead = getc(stdin); //´ÙÀ½ ¹®ÀÚ¸¦ ÀĞ´Â´Ù
-		//if (!(isdigit(lookahead)||isalpha(lookahead)||lookahead=='(')) { //¼ıÀÚ, ¹®ÀÚ, (°¡ ¾Æ´Ï¸é
-		//	printf("error"); //¿À·ù
-		//	exit(0); //Á¾·á
+void exprx() { //exprxí•¨ìˆ˜
+	if (lookahead == '+') { //+ì´ë©´
+		printf("2 "); //2ë²ˆ ë¬¸ë²•
+		lookahead = getc(stdin); //ë‹¤ìŒ ë¬¸ìë¥¼ ì½ëŠ”ë‹¤
+		//if (!(isdigit(lookahead)||isalpha(lookahead)||lookahead=='(')) { //ìˆ«ì, ë¬¸ì, (ê°€ ì•„ë‹ˆë©´
+		//	printf("error"); //ì˜¤ë¥˜
+		//	exit(0); //ì¢…ë£Œ
 		//}
-		term(); //termÈ£Ãâ
-		exprx(); //exprxÈ£Ãâ
+		term(); //termí˜¸ì¶œ
+		exprx(); //exprxí˜¸ì¶œ
 	}
-	else if (lookahead == '-') { //-ÀÌ¸é
-		printf("3 "); //3¹ø ¹®¹ı
-		lookahead = getc(stdin); //´ÙÀ½ ¹®ÀÚ¸¦ ÀĞ´Â´Ù
-		//if (!(isdigit(lookahead) || isalpha(lookahead) || lookahead == '(')) { //¼ıÀÚ, ¹®ÀÚ, (°¡ ¾Æ´Ï¸é
-		//	printf("error"); //¿¡·¯ Ãâ·Â
-		//	exit(0); //Á¾·á
+	else if (lookahead == '-') { //-ì´ë©´
+		printf("3 "); //3ë²ˆ ë¬¸ë²•
+		lookahead = getc(stdin); //ë‹¤ìŒ ë¬¸ìë¥¼ ì½ëŠ”ë‹¤
+		//if (!(isdigit(lookahead) || isalpha(lookahead) || lookahead == '(')) { //ìˆ«ì, ë¬¸ì, (ê°€ ì•„ë‹ˆë©´
+		//	printf("error"); //ì—ëŸ¬ ì¶œë ¥
+		//	exit(0); //ì¢…ë£Œ
 		//}
-		term(); //termÈ£Ãâ
-		exprx(); //exprxÈ£Ãâ
+		term(); //termí˜¸ì¶œ
+		exprx(); //exprxí˜¸ì¶œ
 	}
-	else { //³ª¸ÓÁö
-		printf("7 "); //7¹ø ¹®¹ı
+	else if (lookahead == '$' || lookahead == ')') {
+		printf("7 ");
+	}
+	else {
+		printf("error");
+		exit(0);
 	}
 }
 
-void term() { //termÇÔ¼ö
-	printf("4 "); //4¹ø ¹®¹ı
-	factor(); //factorÈ£Ãâ
-	termx(); //termxÈ£Ãâ
+void term() { //termí•¨ìˆ˜
+	printf("4 "); //4ë²ˆ ë¬¸ë²•
+	factor(); //factorí˜¸ì¶œ
+	termx(); //termxí˜¸ì¶œ
 }
 
-void termx() { //termx ÇÔ¼ö
-	if (lookahead == '*') { //*ÀÌ¸é
-		printf("5 "); //5¹ø ¹®¹ı
-		lookahead = getc(stdin); //´ÙÀ½ ¹®ÀÚ¸¦ ÀĞ´Â´Ù
-		//if (!(isdigit(lookahead) || isalpha(lookahead) || lookahead == '(')) { //¼ıÀÚ, ¹®ÀÚ, (°¡ ¾Æ´Ï¸é
-		//	printf("error"); //¿¡·¯ Ãâ·Â
-		//	exit(0); //Á¾·á
+void termx() { //termx í•¨ìˆ˜
+	if (lookahead == '*') { //*ì´ë©´
+		printf("5 "); //5ë²ˆ ë¬¸ë²•
+		lookahead = getc(stdin); //ë‹¤ìŒ ë¬¸ìë¥¼ ì½ëŠ”ë‹¤
+		//if (!(isdigit(lookahead) || isalpha(lookahead) || lookahead == '(')) { //ìˆ«ì, ë¬¸ì, (ê°€ ì•„ë‹ˆë©´
+		//	printf("error"); //ì—ëŸ¬ ì¶œë ¥
+		//	exit(0); //ì¢…ë£Œ
 		//}
-		factor(); //factorÈ£Ãâ
-		termx(); //termxÈ£Ãâ
+		factor(); //factorí˜¸ì¶œ
+		termx(); //termxí˜¸ì¶œ
 	}
-	else if (lookahead == '/') { // /ÀÌ¸é
-		printf("6 "); //6¹ø ¹®¹ı
-		lookahead = getc(stdin); //´ÙÀ½ ¹®ÀÚ¸¦ ÀĞ´Â´Ù
-		//if (!(isdigit(lookahead) || isalpha(lookahead) || lookahead == '(')) { //¼ıÀÚ, ¹®ÀÚ, (°¡ ¾Æ´Ï¸é
-		//	printf("error"); //¿¡·¯ Ãâ·Â
-		//	exit(0); //Á¾·á
+	else if (lookahead == '/') { // /ì´ë©´
+		printf("6 "); //6ë²ˆ ë¬¸ë²•
+		lookahead = getc(stdin); //ë‹¤ìŒ ë¬¸ìë¥¼ ì½ëŠ”ë‹¤
+		//if (!(isdigit(lookahead) || isalpha(lookahead) || lookahead == '(')) { //ìˆ«ì, ë¬¸ì, (ê°€ ì•„ë‹ˆë©´
+		//	printf("error"); //ì—ëŸ¬ ì¶œë ¥
+		//	exit(0); //ì¢…ë£Œ
 		//}
-		factor(); //factorÈ£Ãâ
-		termx(); //termxÈ£Ãâ
+		factor(); //factorí˜¸ì¶œ
+		termx(); //termxí˜¸ì¶œ
 	}
-	else { //³ª¸ÓÁö
-		printf("8 "); //8¹ø ¹®¹ı
+	else { //ë‚˜ë¨¸ì§€
+		printf("8 "); //8ë²ˆ ë¬¸ë²•
 	}
 }
 
-void factor() { //factor ÇÔ¼ö
-	if (isdigit(lookahead)) { //¼ıÀÚÀÌ¸é
-		printf("9 "); //9¹ø ¹®¹ı
-		while (isdigit(lookahead)) { //¼ıÀÚÀÌ¸é ¹İº¹
-			lookahead = getc(stdin); //´ÙÀ½ ¹®ÀÚ¸¦ ÀĞ´Â´Ù
+void factor() { //factor í•¨ìˆ˜
+	if (isdigit(lookahead)) { //ìˆ«ìì´ë©´
+		printf("9 "); //9ë²ˆ ë¬¸ë²•
+		while (isdigit(lookahead)) { //ìˆ«ìì´ë©´ ë°˜ë³µ
+			lookahead = getc(stdin); //ë‹¤ìŒ ë¬¸ìë¥¼ ì½ëŠ”ë‹¤
 		}
-		if (lookahead == '(') { // (ÀÌ¸é
-			printf("error"); //¿¡·¯ Ãâ·Â
-			exit(0); //Á¾·á
-		}
-	}
-	else if (isalpha(lookahead)) { //¾ËÆÄºªÀÌ¸é
-		printf("10 "); //10¹ø ¹®¹ı
-		while (isdigit(lookahead) || isalpha(lookahead)) { //¼ıÀÚ³ª ¹®ÀÚÀÌ¸é ¹İº¹
-			lookahead = getc(stdin); //´ÙÀ½ ¹®ÀÚ¸¦ ÀĞ´Â´Ù
-		}
-		if (lookahead == '('){ // (ÀÌ¸é
-			printf("error"); //¿¡·¯ Ãâ·Â
-			exit(0); //Á¾·á
+		if (lookahead == '(') { // (ì´ë©´
+			printf("error"); //ì—ëŸ¬ ì¶œë ¥
+			exit(0); //ì¢…ë£Œ
 		}
 	}
-	else if (lookahead == '(') { // (ÀÌ¸é
-		printf("11 "); //11¹ø ¹®¹ı
-		lookahead = getc(stdin); //´ÙÀ½ ¹®ÀÚ¸¦ ÀĞ´Â´Ù
-		expr(); //exprÈ£Ãâ
-		if (lookahead != ')') { // )°¡ ¾Æ´Ï¸é
-			printf("error"); //¿¡·¯ Ãâ·Â
-			exit(0); //Á¾·á
+	else if (isalpha(lookahead)) { //ì•ŒíŒŒë²³ì´ë©´
+		printf("10 "); //10ë²ˆ ë¬¸ë²•
+		while (isdigit(lookahead) || isalpha(lookahead)) { //ìˆ«ìë‚˜ ë¬¸ìì´ë©´ ë°˜ë³µ
+			lookahead = getc(stdin); //ë‹¤ìŒ ë¬¸ìë¥¼ ì½ëŠ”ë‹¤
 		}
-		lookahead = getc(stdin); //´ÙÀ½ ¹®ÀÚ¸¦ ÀĞ¾î
-		if (!(lookahead == '+' || lookahead == '-' || lookahead == '*' || lookahead == '/' || lookahead == '$'||lookahead==')')) { //¿¬»êÀÚ, $, )°¡ ¾Æ´Ï¸é
-			printf("error"); //¿¡·¯ Ãâ·Â
-			exit(0); //Á¾·á
+		if (lookahead == '('){ // (ì´ë©´
+			printf("error"); //ì—ëŸ¬ ì¶œë ¥
+			exit(0); //ì¢…ë£Œ
 		}
 	}
-	else { //³ª¸ÓÁö Æ¯¼ö¹®ÀÚÀÌ¸é
-		printf("error"); //¿¡·¯ Ãâ·Â
-		exit(0); //Á¾·á
+	else if (lookahead == '(') { // (ì´ë©´
+		printf("11 "); //11ë²ˆ ë¬¸ë²•
+		lookahead = getc(stdin); //ë‹¤ìŒ ë¬¸ìë¥¼ ì½ëŠ”ë‹¤
+		expr(); //exprí˜¸ì¶œ
+		if (lookahead != ')') { // )ê°€ ì•„ë‹ˆë©´
+			printf("error"); //ì—ëŸ¬ ì¶œë ¥
+			exit(0); //ì¢…ë£Œ
+		}
+		lookahead = getc(stdin); //ë‹¤ìŒ ë¬¸ìë¥¼ ì½ì–´
+		if (!(lookahead == '+' || lookahead == '-' || lookahead == '*' || lookahead == '/' || lookahead == '$'||lookahead==')')) { //ì—°ì‚°ì, $, )ê°€ ì•„ë‹ˆë©´
+			printf("error"); //ì—ëŸ¬ ì¶œë ¥
+			exit(0); //ì¢…ë£Œ
+		}
+	}
+	else { //ë‚˜ë¨¸ì§€ íŠ¹ìˆ˜ë¬¸ìì´ë©´
+		printf("error"); //ì—ëŸ¬ ì¶œë ¥
+		exit(0); //ì¢…ë£Œ
 	}
 }
