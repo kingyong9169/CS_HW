@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <style>
+            body {
+                height: 100vh;
+                background-image: url("image/market.jpg");
+                background-position: center;
+                background-repeat : no-repeat;
+                background-size : cover;
+            }
+        </style>
+    </head>
+    <body>
+        <script>
+            function Login(){
+                var id = document.getElementById('id').value;
+                var pw = document.getElementById('password').value;
+                if(String(id)==="dong yong"&& String(pw)==="9169"){
+                    alert('Login Success!')
+                    location.href="hw.html";
+                }
+                else{
+                    alert('Login Failed!')
+                }
+            }
+        </script>
+        <p id="title">Happy<br> Shopping</p>
+        <div id="login_form" class="container-fluid">
+            <p style="color: white;">ID</p>
+            <input type="text" id="id" class="form-control">
+            <p style="color: white;">PW</p>
+            <input type="password" id="password" class="form-control"><br>
+            <button style="height: 30px; border: 0; outline:0;" onClick="Login()" class="btn-success btn-block form-control">Login</button>
+        </div>
+    </body>
+</html>

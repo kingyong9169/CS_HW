@@ -1,0 +1,98 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+#title {
+  margin: 0px;
+  padding: 0px;
+  color: white;
+  font-size: 7vw;
+  position: absolute;
+  top: 50px;
+  left: 25px;
+}
+
+#login_form {
+  position: absolute;
+  top: 75px;
+  right: 25px;
+}
+
+#logout {
+  background-color: transparent;
+  outline: 0;
+  border: 0;
+}
+
+#button {
+  background-image: url("image/home.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+.container {
+  padding: 0 10% 0 10%;
+  margin: auto;
+}
+
+.navbar {
+  width: 100%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  border: dashed red;
+  border-width: 2px 0 2px 0;
+  font-size: 20px;
+  margin: 0;
+  text-align: center;
+}
+
+.navbar-nav li {
+  margin: auto;
+  padding: 0 2% 0 2%;
+  display: inline;
+}
+
+.navbar-nav li a {
+  margin: 0;
+  padding: 0;
+}
+.navbar-nav li a:hover {
+  color: red !important;
+}
+.navbar-nav {
+  width: 100%;
+}
+
+#best {
+  margin: auto;
+  padding: auto;
+}
+
+table {
+  border: none;
+  border-spacing: 5px;
+  border-collapse: separate;
+}
+
+.idf {
+  border: none;
+}
+
+td {
+  margin: 20px;
+  border: 2px solid black;
+}
+
+td:hover {
+  border-color: red;
+}
+
+#footer {
+  text-align: center;
+  background-color: aquamarine;
+  padding: 1% 0 1% 0;
+  margin: 0;
+}
