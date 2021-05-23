@@ -1,5 +1,5 @@
 var logout = () => {
-    location.href="login.html";
+    location.href="index.html";
 }
 
 var fruits_list = [
@@ -27,7 +27,7 @@ var fruits_list = [
     {
         idf : 4,
         name : 'Watermelon',
-        img_path : "watermelon.png",
+        img_path : "watermelon.jpg",
         price: 6,
         selected: false
     },
@@ -48,14 +48,14 @@ var fruits_list = [
     {
         idf : 7,
         name : 'Avocado',
-        img_path : "avocado.png",
+        img_path : "avocado.jpg",
         price: 6,
         selected: false
     },
     {
         idf : 8,
         name : 'blueberry',
-        img_path : "blueberry.png",
+        img_path : "blueberry.jpg",
         price: 5,
         selected: false
     },
@@ -76,7 +76,7 @@ var fruits_list = [
     {
         idf : 11,
         name : 'lemon',
-        img_path : "lemon.png",
+        img_path : "lemon.jpg",
         price: 3,
         selected: false
     },
@@ -97,21 +97,21 @@ var fruits_list = [
     {
         idf : 14,
         name : 'pear',
-        img_path : "pear.png",
+        img_path : "pear.jpg",
         price: 6,
         selected: false
     },
     {
         idf : 15,
         name : 'pineapple',
-        img_path : "pineapple.png",
+        img_path : "pineapple.jpg",
         price: 7,
         selected: false
     },
     {
         idf : 16,
         name : 'plum',
-        img_path : "plum.png",
+        img_path : "plum.jpg",
         price: 7,
         selected: false
     }
@@ -119,7 +119,7 @@ var fruits_list = [
 
 
 var table = () => {
-    document.write('<table border="2">');
+    document.write('<table>');
     for (var i = 0; i < fruits_list.length / 4; i++){
         document.write('<tr>');
         for (var j = fruits_list.length / 4 * i; j < fruits_list.length / 4 * (i + 1); j++) {
@@ -135,7 +135,6 @@ var table = () => {
         }
         document.write("</tr>");
     }
-    document.write("<br>");
     document.write('</table>');
 }
 
@@ -160,5 +159,10 @@ var select = (id) => {
 }
 
 var buy = () => {
-    alert(alert_name + ' is(are) selected!!\ntotal price: ' + alert_price+'$');
+    if (alert_name.length===0&&alert_price === 0) {
+        alert('Please select item!');
+    }
+    else {
+        alert(alert_name + ' is(are) selected!!\n\ntotal : ' + alert_price+'$');
+    }
 }
