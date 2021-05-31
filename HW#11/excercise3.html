@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <div id="map" style="width: 800px; height: 500px"></div>
+
+    <script>
+      function setColor(color) {
+        return {
+          path: "M 0,0 C -2,-20 -10,-22 -10,-30 A 10,10 0 1,1 10,-30 C 10,-22 2,-20 0,0 z M -2,-30 a 2,2 0 1,1 4,0 2,2 0 1,1 -4,0",
+          fillColor: color,
+          fillOpacity: 1,
+          strokeColor: "#fff",
+          strokeWeight: 2,
+          scale: 1.5,
+        };
+      }
+
+      function myMap() {
+        var mapCanvas = document.getElementById("map");
+        var myCenter = new google.maps.LatLng(36.6283, 127.4583);
+
+        var HeungHai = new google.maps.LatLng(36.1231233, 129.3592418); //4.7
+        var Pohang = new google.maps.LatLng(36.0193129, 129.343269); //4.7
+        var HeungHai2 = new google.maps.LatLng(36.1251233, 129.3792418); //5.4
+        var Sungjibaegam = new google.maps.LatLng(41.83333, 129.41667); //6.3
+        var Hoemulli = new google.maps.LatLng(40.83333, 132.41667); //5.9
+        var Maebaruchuo = new google.maps.LatLng(33.5572822, 130.1955757); //4.1
+        var Kyonju = new google.maps.LatLng(35.8262025, 129.2246949); //3.5
+        var Kyonju2 = new google.maps.LatLng(35.8582055, 129.2226949); //4.6
+        var Kyonju3 = new google.maps.LatLng(35.8562095, 129.2346949); //5.4
+        var Kyonju4 = new google.maps.LatLng(35.8562925, 129.2946949);
+        //4.9
+        var mapOptions = {
+          center: myCenter,
+          zoom: 6,
+          mapTypeId: google.maps.MapTypeId.SATELLITE,
+        };
+        var map = new google.maps.Map(mapCanvas, mapOptions);
+
+        var myUniversity = new google.maps.Circle({
+          center: myCenter,
+          radius: 00,
+          strokeOpacity: 0.9,
+          strokeWeight: 5,
+          fillOpacity: 0.1,
+        });
+        myUniversity.setMap(map);
+
+        var HeungHai_marker = new google.maps.Marker({
+          position: HeungHai,
+          animation: google.maps.Animation.BOUNCE,
+          icon: setColor("#FFA500"),
+        });
+        HeungHai_marker.setMap(map);
+
+        var infowindow = new google.maps.InfoWindow({
+          content: "HeungHai",
+        });
+        infowindow.open(map, HeungHai_marker);
+
+        var v_HeungHai = new google.maps.Circle({
+          center: HeungHai,
+          radius: 20000,
+          strokeColor: "#FFA500",
+          strokeOpacity: 0.6,
+          strokeWeight: 2,
+          fillColor: "#FFA500",
+          fillOpacity: 0.6,
+        });
+        v_HeungHai.setMap(map);
+
+        var HeungHai2_marker = new google.maps.Marker({
+          position: HeungHai2,
+          animation: google.maps.Animation.BOUNCE,
+          icon: setColor("#96F56E"),
+        });
+        HeungHai2_marker.setMap(map);
+
+        var infowindow = new google.maps.InfoWindow({
+          content: "HeungHai2",
+        });
+        infowindow.open(map, HeungHai2_marker);
+
+        var v_HeungHai2 = new google.maps.Circle({
+          center: HeungHai2,
+          radius: 28000,
+          strokeColor: "#96F56E",
+          strokeOpacity: 0.6,
+          strokeWeight: 2,
+          fillColor: "#96F56E",
+          fillOpacity: 0.6,
+        });
+        v_HeungHai2.setMap(map);
+
+        var Pohang_marker = new google.maps.Marker({
+          position: Pohang,
+          animation: google.maps.Animation.BOUNCE,
+          icon: setColor("#FFEB46"),
+        });
+        Pohang_marker.setMap(map);
+
+        var infowindow = new google.maps.InfoWindow({
+          content: "Pohang",
+        });
+        infowindow.open(map, Pohang_marker);
+
+        var v_Pohang = new google.maps.Circle({
+          center: Pohang,
+          radius: 20000,
+          strokeColor: "#FFEB46",
+          strokeOpacity: 0.6,
+          strokeWeight: 2,
+          fillColor: "#FFEB46",
+          fillOpacity: 0.6,
+        });
+        v_Pohang.setMap(map);
+
+        var Sungjibaegam_marker = new google.maps.Marker({
+          position: Sungjibaegam,
+          animation: google.maps.Animation.BOUNCE,
+          icon: setColor("#1E821E"),
+        });
+        Sungjibaegam_marker.setMap(map);
+
+        var infowindow = new google.maps.InfoWindow({
+          content: "Sungjibaegam",
+        });
+        infowindow.open(map, Sungjibaegam_marker);
+
+        var v_Sungjibaegam = new google.maps.Circle({
+          center: Sungjibaegam,
+          radius: 36000,
+          strokeColor: "#1E821E",
+          strokeOpacity: 0.6,
+          strokeWeight: 2,
+          fillColor: "#1E821E",
+          fillOpacity: 0.6,
+        });
+        v_Sungjibaegam.setMap(map);
+
+        var Hoemulli_marker = new google.maps.Marker({
+          position: Hoemulli,
+          animation: google.maps.Animation.BOUNCE,
+          icon: setColor("#1478FF"),
+        });
+        Hoemulli_marker.setMap(map);
+
+        var infowindow = new google.maps.InfoWindow({
+          content: "Hoemulli",
+        });
+        infowindow.open(map, Hoemulli_marker);
+
+        var v_Hoemulli = new google.maps.Circle({
+          center: Hoemulli,
+          radius: 31000,
+          strokeColor: "#1478FF",
+          strokeOpacity: 0.6,
+          strokeWeight: 2,
+          fillColor: "#1478FF",
+          fillOpacity: 0.6,
+        });
+        v_Hoemulli.setMap(map);
+
+        var Maebaruchuo_marker = new google.maps.Marker({
+          position: Maebaruchuo,
+          animation: google.maps.Animation.BOUNCE,
+          icon: setColor("#8572EE"),
+        });
+        Maebaruchuo_marker.setMap(map);
+
+        var infowindow = new google.maps.InfoWindow({
+          content: "Maebaruchuo",
+        });
+        infowindow.open(map, Maebaruchuo_marker);
+
+        var v_Maebaruchuo = new google.maps.Circle({
+          center: Maebaruchuo,
+          radius: 19000,
+          strokeColor: "#8572EE",
+          strokeOpacity: 0.6,
+          strokeWeight: 2,
+          fillColor: "#8572EE",
+          fillOpacity: 0.6,
+        });
+        v_Maebaruchuo.setMap(map);
+
+        var Kyonju_marker = new google.maps.Marker({
+          position: Kyonju,
+          animation: google.maps.Animation.BOUNCE,
+          icon: setColor("#FF8CFF"),
+        });
+        Kyonju_marker.setMap(map);
+
+        var infowindow = new google.maps.InfoWindow({
+          content: "Kyonju",
+        });
+        infowindow.open(map, Kyonju_marker);
+
+        var v_Kyonju = new google.maps.Circle({
+          center: Kyonju,
+          radius: 16000,
+          strokeColor: "#FF8CFF",
+          strokeOpacity: 0.6,
+          strokeWeight: 2,
+          fillColor: "#FF8CFF",
+          fillOpacity: 0.6,
+        });
+        v_Kyonju.setMap(map);
+
+        var Kyonju2_marker = new google.maps.Marker({
+          position: Kyonju2,
+          animation: google.maps.Animation.BOUNCE,
+          icon: setColor("#5AE0FF"),
+        });
+        Kyonju2_marker.setMap(map);
+
+        var infowindow = new google.maps.InfoWindow({
+          content: "Kyonju2",
+        });
+        infowindow.open(map, Kyonju2_marker);
+
+        var v_Kyonju2 = new google.maps.Circle({
+          center: Kyonju2,
+          radius: 20000,
+          strokeColor: "#5AE0FF",
+          strokeOpacity: 0.4,
+          strokeWeight: 2,
+          fillColor: "#5AE0FF",
+          fillOpacity: 0.4,
+        });
+        v_Kyonju2.setMap(map);
+
+        var Kyonju3_marker = new google.maps.Marker({
+          position: Kyonju3,
+          animation: google.maps.Animation.BOUNCE,
+          icon: setColor("#8B6331"),
+        });
+        Kyonju3_marker.setMap(map);
+
+        var infowindow = new google.maps.InfoWindow({
+          content: "Kyonju3",
+        });
+        infowindow.open(map, Kyonju3_marker);
+
+        var v_Kyonju3 = new google.maps.Circle({
+          center: Kyonju3,
+          radius: 28000,
+          strokeColor: "#8B6331",
+          strokeOpacity: 0.4,
+          strokeWeight: 2,
+          fillColor: "#8B6331",
+          fillOpacity: 0.4,
+        });
+        v_Kyonju3.setMap(map);
+
+        var Kyonju4_marker = new google.maps.Marker({
+          position: Kyonju4,
+          animation: google.maps.Animation.BOUNCE,
+          icon: setColor("#EB3232"),
+        });
+        Kyonju4_marker.setMap(map);
+
+        var infowindow = new google.maps.InfoWindow({
+          content: "Kyonju4",
+        });
+        infowindow.open(map, Kyonju4_marker);
+
+        var v_Kyonju4 = new google.maps.Circle({
+          center: Kyonju4,
+          radius: 23000,
+          strokeColor: "#EB3232",
+          strokeOpacity: 0.4,
+          strokeWeight: 2,
+          fillColor: "#EB3232",
+          fillOpacity: 0.4,
+        });
+        v_Kyonju4.setMap(map);
+      }
+    </script>
+    <!--
+To use this code on your website, get a free API key from Google.
+Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
+-->
+  </body>
+</html>
