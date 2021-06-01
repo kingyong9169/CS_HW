@@ -1,2 +1,2 @@
 # OpenSource_WebSW_HW
-OpenSource_WebSW Lecture Homework repository
+OpenSource_WebSW Lecture Homework repo.
