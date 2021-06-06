@@ -1,0 +1,6 @@
+start
+가:=2;
+A:=4;
+나:=5;
+다:= 가 mul 4 sub (40 sub (A add 나));
+end
