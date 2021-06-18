@@ -6,3 +6,5 @@ Lex, Yacc
 
 <thread_sum_fact>
 자연수의 합, 팩토리얼을 스레드로 구현하는 코드
+
+page replacement algorithm : LRU, Belldy's algorithm
