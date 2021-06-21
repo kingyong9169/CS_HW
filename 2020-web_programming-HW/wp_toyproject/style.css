@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #FFFFFF;
+}
+.nav-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 0 0 80px 0;
+    padding: 0;
+    background-color: mediumspringgreen;
+    list-style-type: none;
+    position: fixed;
+    top: 0;
+    box-shadow: 0 0 20px #000;
+}
+.nav-item {
+    padding: 15px;
+    cursor: pointer;
+}
+.nav-item>a:nth-child(n+1) {
+    text-align: center;
+    text-decoration: none;
+    color: midnightblue;
+    font-family: 'Nanum Gothic', sans-serif;
+
+}
+.nav-container>.main {
+    font-family: 'Montserrat', sans-serif;
+}
+.nav-item:hover {
+    background-color: gray;
+    transition-duration: 0.3s;
+}
+.nav-item:hover>a {
+    color: white;
+    font-weight: bold;
+}
+.signUp-message {
+    text-align: center;
+    width: 100vw;
+    margin: 80px auto;
+}
+.signUp-message>h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 8vw;
+    margin-bottom: 10px;
+}
+.signUp-message>p {
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 2vw;
+}
+.main-container {
+    width: 300px;
+    margin: 10px auto;
+    margin-bottom: 40px;
+    background-color: mediumturquoise;
+    border-radius: 10px;
+    box-shadow:20px 20px black;
+}
+form>h3 {
+    margin-top: 10px;
+    font-family: 'Nanum Gothic', sans-serif;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+form>input {
+    width: 80%;
+    height: 30px;
+    max-width: 200px;
+    margin: 20px;
+    border: 2px solid seagreen;
+    border-radius: 5px;
+    font-family: 'Nanum Gothic', sans-serif;
+    padding: 3px;
+}
+form>input:focus {
+    outline: none;
+    background-color: rgba(173, 255, 100, 0.459);
+}
+form>button {
+    margin-right: 140px;
+    margin-bottom: 30px;
+    border: none;
+    background-color: lightgray;
+    padding: 5px;
+    border-radius: 5px;
+    font-family: 'Nanum Gothic', sans-serif;
+}
+form>button:hover {
+    outline: none;
+    background-color: white;
+}
+.submit {
+    border: none;
+    background-color: white;
+}
+.submit:hover {
+    background-color: lightseagreen;
+}
+.address-list>li {
+    list-style: none;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    font-family: 'Nanum Gothic', sans-serif;
+    background-color: mediumpurple;
+}
+.address-list>li:hover {
+    background-color: white;
+    cursor: pointer;
+}

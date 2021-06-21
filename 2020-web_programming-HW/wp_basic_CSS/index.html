@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>WEB_HW3</title>
+    <style>
+        .menu-box{ /*메뉴 박스 구현*/
+            display: flex;
+            height: 40px;
+        }
+        .menu-item{
+            width: 50px; height: 20px;
+            padding: 5px 20px;
+            border: 1px solid black;
+        }
+
+        .item.box{ /*아이템 박스 구현*/
+            position: relative;
+            color: black;
+            display: flex;
+            align-self: center;
+        }
+        .box1{border: 1px solid black;
+            height: 240px;}
+        .box2{background-color: grey;
+            height: 120px;}
+        .child{left: 48%;}
+        .left-float{float: left;}
+
+        .item.pic{ /*아이템 박스 안에 사진 3개 및 문구 2개 삽입*/
+            height: 240px;
+        }
+        .pic1{margin: auto; width: 350px;} /*상위 두 개의 이미지 삽입 시 클래스 사용*/
+        .pic2{ /*마지막 사진 삽입 시 클래스 사용*/
+            margin: 10px;
+            width: 250px;}
+        .pic.text{
+            position: absolute;
+            color: black;
+            z-index: 1;
+            text-align: center;
+        }
+        .text1{top: 25%; left: 35%;
+        font-size: 2rem;}
+        .text2{top: 60%; left: 40%;
+        font-size: 1.5rem;}
+
+        .text.box{ /*텍스트 박스를 만들고 두 개의 텍스트 아이템 구성*/
+            display: flex;
+            height: 400px;
+        }
+        .text.item{
+            margin: 40px;
+        }
+        .item1{width: 60%;}
+        .item2{width: 40%;}
+        
+    </style>
+</head>
+<body>
+    <div class="menu-box"> 
+        <div class="menu-item">Seoul</div>
+        <div class="menu-item">Tokyo</div>
+        <div class="menu-item">London</div>
+    </div>
+    <div class="item box box1">
+        <img class="item pic pic1" src="https://blog.kakaocdn.net/dn/baSXur/btqwCp19xMo/4JINvrBcIPKrgDRxpK4MW0/img.jpg">
+        <img class="item pic pic1" src="https://blog.kakaocdn.net/dn/baSXur/btqwCp19xMo/4JINvrBcIPKrgDRxpK4MW0/img.jpg">
+        <div class="pic text text1">Just do it! 
+            Go right now!</div>
+        <div class="pic text text2">Do it right 
+            when you do it.</div>
+    </div>
+    <div class="text box">
+        <div class="text item item1">
+            <h2>Placeskateboards</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni enim animi asperiores. Architecto facilis quae deleniti expedita magni ipsum est eum, quo rem blanditiis possimus reprehenderit! Quaerat nobis architecto eum corrupti asperiores deserunt pariatur illum, quasi quas aliquam earum doloribus ducimus hic quam ut a. Libero voluptas nesciunt nulla expedita nisi consequuntur nihil neque maiores, qui culpa reprehenderit facilis quia repellat corrupti sunt suscipit aperiam maxime magnam officia exercitationem eius ullam eum vel aliquid. Molestiae nostrum sapiente fugit minima sed corrupti. Commodi praesentium, reiciendis velit voluptates repellendus vero amet, aliquid temporibus neque culpa corporis ducimus suscipit? Rem, distinctio adipisci nostrum quod officiis explicabo tempore, veritatis eligendi quis pariatur est hic in quae. Sed pariatur beatae velit dolore nisi illo perferendis.</p>
+        </div>
+        <div class="text item item2">
+            <h2>Supreme</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio exercitationem temporibus, ad, asperiores neque ratione sed quas repellendus aliquid culpa veniam deserunt, consequatur eius cumque libero minima magnam dolorum. Soluta magni neque cumque. Hic omnis cum optio iusto? Sequi, adipisci omnis! Cum quibusdam reprehenderit quis maxime vero totam vel quisquam libero! Provident expedita dolorum, ad optio fugit impedit earum similique officiis ullam vel corporis! Rem nulla deleniti suscipit excepturi, ab delectus similique molestias itaque nobis unde commodi distinctio saepe dolorem?</p>
+        </div>
+    </div>
+    <img class="item pic pic2 left-float" src="https://img1.daumcdn.net/thumb/R720x0.q80/?scode=mtistory2&fname=http%3A%2F%2Fcfile5.uf.tistory.com%2Fimage%2F2324B645595CC174104F99">
+    <h2>A bathing ape</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima earum qui rerum velit atque voluptatem quo dignissimos unde voluptas non, maxime minus eaque praesentium deserunt error eum totam aliquid sunt dolorem mollitia! Asperiores placeat commodi unde eaque qui assumenda quos, amet voluptatem voluptatum, aliquam laboriosam? Doloremque a unde ratione eaque enim pariatur veritatis. Obcaecati et nesciunt ab, eum illo a itaque officia labore tenetur placeat eveniet quia dignissimos sed. Illo ipsa ut earum veniam inventore vitae! Temporibus porro ipsum dignissimos nulla veritatis, praesentium natus ipsa voluptatem odit sunt at excepturi non nisi rerum quia expedita laboriosam culpa vel dolorum dolore ad. Autem quasi voluptatem accusamus molestiae laboriosam, fugit ad maxime quisquam tempora maiores deleniti mollitia doloremque? Consequatur in vel recusandae illo iusto eligendi sunt illum ad minima inventore nesciunt sapiente, consequuntur, tempore repellat omnis quam corporis incidunt distinctio excepturi unde.</p>
+    <div class="item box box2">
+        <div class="item box child">Copyright</div>
+    </div>
+</body>
+</html>
