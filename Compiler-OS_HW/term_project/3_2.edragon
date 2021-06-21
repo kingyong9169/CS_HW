@@ -1,0 +1,9 @@
+start
+가:=4;
+A:=4;
+나:=5;
+if(나!=A){
+    나:=A add 가 mul A;
+}
+마:=A add 다;
+end

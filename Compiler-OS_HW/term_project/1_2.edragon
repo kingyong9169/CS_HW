@@ -1,0 +1,6 @@
+start
+가:=2;
+A:=4;
+나:=A mul A sub 2 div 가;
+다:= 가 add 4 sub 40 div A add 나;
+end
