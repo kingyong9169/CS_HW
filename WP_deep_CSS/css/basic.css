@@ -1,0 +1,95 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.menu-box {
+    /*메뉴 박스 구현*/
+    display: flex;
+    height: 40px;
+}
+
+.menu-item {
+    width: 50px;
+    height: 20px;
+    padding: 5px 20px;
+    border: 1px solid black;
+}
+
+.item.box {
+    /*아이템 박스 구현*/
+    position: relative;
+    color: black;
+    display: flex;
+    align-self: center;
+    z-index: 5;
+}
+
+
+.box2 {
+    background-color: grey;
+    height: 120px;
+}
+.box3{ /*하단 박스*/
+    position: relative;
+    color: black;
+    align-self: center;
+    height: 260px;
+}
+.box1:active {
+    height: 400px;
+}
+
+/*1초 동안 마우스를 클릭하면 변한다*/
+.child {
+    left: 48%;
+}
+
+.left-float {
+    float: left;
+}
+
+.item.pic {
+    /*아이템 박스 안에 사진 3개 및 문구 2개 삽입*/
+    height: 240px;
+}
+
+.pic1 {
+    margin: auto;
+    width: 350px;
+}
+
+/*상위 두 개의 이미지 삽입 시 클래스 사용*/
+.pic2 {
+    /*마지막 사진 삽입 시 클래스 사용*/
+    margin: 10px;
+    width: 250px;
+}
+
+.pic3{
+    height: 120px;
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTcJfO-IIaMRsdu4FlWQ-dd2U8DlOXnWTMy6w&usqp=CAU)
+}
+.pic.text {
+    position: absolute;
+    color: black;
+    z-index: 1;
+    text-align: center;
+}
+
+.text.box { 
+    /*텍스트 박스를 만들고 두 개의 텍스트 아이템 구성*/
+    display: flex;
+    height: 400px;
+}
+
+.text.item {
+    margin: 40px;
+}
+
+.item1 {
+    width: 60%;
+}
+
+.item2 {
+    width: 40%;
+}
