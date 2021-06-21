@@ -1,0 +1,92 @@
+#header {
+    display: flex;
+    margin-left: 120px;
+    margin-right: 120px;
+    align-items: center;
+    background-color: rgb(152, 194, 211);
+    height: 100px;
+}
+
+#footer {
+    padding: 15px;
+    margin-left: 120px;
+    margin-right: 120px;
+    text-align: end;
+    background-color: rgb(152, 194, 211);
+    height: 150px;
+}
+#footer p{
+    margin: 0px;
+    padding: 0px;
+}
+#footer a{
+    color: blue;
+}
+
+#header img{
+    margin-left: 25px;
+    margin-right: 10px;
+    float: left;
+    width: 200px; 
+    height: 70px;
+}
+#header p{
+    float: left; 
+    font-size: 25px;
+    color: aliceblue;
+    margin-right: 50px;
+}
+
+ul {
+    text-align: center;
+}
+ul li {
+    font-size: 25px;
+    border-radius: 10px 10px 10px 10px;
+    background-color: aliceblue;
+    margin-left: 20px;
+    display: inline;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+ul li a {
+    text-decoration: none;
+    color: black;
+}
+ul li:hover {
+    background-color: rgb(104, 102, 102);
+}
+
+#nav{
+    width: 640px;
+}
+.content1{
+    text-align: center;
+    margin-left: 120px;
+    width: 100%;
+    margin-top: 50px;
+    border-bottom: 3px dotted black;
+}
+#coupon{
+    margin: auto;
+    text-align: center;
+    width: 250px;
+    height: 80px;
+    background-color: rgb(152, 194, 211);
+    position: fixed;
+    top: 300px;
+    left: 830px;
+}
+
+.content2{
+    text-align: center;
+    margin-left: 120px;
+    width: 100%;
+    margin-top: 0px;
+    border-bottom: 3px dotted black;
+}
+
+#submit{
+    background-color: rgb(152, 194, 211);
+    border-color: rgb(208, 208, 211);
+}

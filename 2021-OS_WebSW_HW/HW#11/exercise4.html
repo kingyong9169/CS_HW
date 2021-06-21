@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <div id="map" style="width: 800px; height: 500px"></div>
+
+    <script>
+      function setColor(color) {
+        return {
+          path: "M 0,0 C -2,-20 -10,-22 -10,-30 A 10,10 0 1,1 10,-30 C 10,-22 2,-20 0,0 z M -2,-30 a 2,2 0 1,1 4,0 2,2 0 1,1 -4,0",
+          fillColor: color,
+          fillOpacity: 1,
+          strokeColor: "#fff",
+          strokeWeight: 2,
+          scale: 1.5,
+        };
+      }
+
+      function myMap() {
+        var mapCanvas = document.getElementById("map");
+        var myCenter = new google.maps.LatLng(36.6283, 127.4583);
+
+        var Seoul = new google.maps.LatLng(37.5464, 126.9648);
+        var cheongryangri = new google.maps.LatLng(37.580565478, 127.048188418);
+        var sangbong = new google.maps.LatLng(37.597129245, 127.085666204);
+        var yangpyeong = new google.maps.LatLng(37.492760023, 127.491381934);
+        var manjong = new google.maps.LatLng(37.353811944, 127.892907337);
+        var hoeangseong = new google.maps.LatLng(37.483074207, 128.009980917);
+        var dunnae = new google.maps.LatLng(37.510204234, 128.221027851);
+        var pyengchang = new google.maps.LatLng(37.562417934, 128.429666162);
+        var jinbu = new google.maps.LatLng(37.642630811, 128.574387431);
+        var gangreung = new google.maps.LatLng(37.764492268, 128.899570866);
+        var jeongdongjin = new google.maps.LatLng(37.691442441, 129.032720234);
+        var mukho = new google.maps.LatLng(37.546778406, 129.107709697);
+        var donghae = new google.maps.LatLng(37.49818685, 129.1238001);
+        var intersaction = new google.maps.LatLng(
+          37.74799584808107,
+          128.8552450266338
+        );
+
+        var mapOptions = {
+          center: myCenter,
+          zoom: 8,
+          mapTypeId: google.maps.MapTypeId.SATELLITE,
+        };
+        var map = new google.maps.Map(mapCanvas, mapOptions);
+
+        var Seoul_marker = new google.maps.Marker({
+          position: Seoul,
+          animation: google.maps.Animation.BOUNCE,
+          icon: setColor("#FF0000"),
+        });
+        Seoul_marker.setMap(map);
+
+        var cheongryangri_marker = new google.maps.Marker({
+          position: cheongryangri,
+          animation: google.maps.Animation.BOUNCE,
+          icon: setColor("#E56D29"),
+        });
+        cheongryangri_marker.setMap(map);
+
+        var sangbong_marker = new google.maps.Marker({
+          position: sangbong,
+          animation: google.maps.Animation.BOUNCE,
+          icon: setColor("#FFE650"),
+        });
+        sangbong_marker.setMap(map);
+
+        var yangpyeong_marker = new google.maps.Marker({
+          position: yangpyeong,
+          animation: google.maps.Animation.BOUNCE,
+          icon: setColor("#FFE650"),
+        });
+        yangpyeong_marker.setMap(map);
+
+        var manjong_marker = new google.maps.Marker({
+          position: manjong,
+          animation: google.maps.Animation.BOUNCE,
+          icon: setColor("#40A940"),
+        });
+        manjong_marker.setMap(map);
+
+        var hoeangseong_marker = new google.maps.Marker({
+          position: hoeangseong,
+          animation: google.maps.Animation.BOUNCE,
+          icon: setColor("#2828CD"),
+        });
+        hoeangseong_marker.setMap(map);
+
+        var dunnae_marker = new google.maps.Marker({
+          position: dunnae,
+          animation: google.maps.Animation.BOUNCE,
+          icon: setColor("#90AFFF"),
+        });
+        dunnae_marker.setMap(map);
+
+        var pyengchang_marker = new google.maps.Marker({
+          position: pyengchang,
+          animation: google.maps.Animation.BOUNCE,
+          icon: setColor("#C964E2"),
+        });
+        pyengchang_marker.setMap(map);
+
+        var jinbu_marker = new google.maps.Marker({
+          position: jinbu,
+          animation: google.maps.Animation.BOUNCE,
+          icon: setColor("#F88EF4"),
+        });
+        jinbu_marker.setMap(map);
+
+        var gangreung_marker = new google.maps.Marker({
+          position: gangreung,
+          animation: google.maps.Animation.BOUNCE,
+          icon: setColor("#A5704B"),
+        });
+        gangreung_marker.setMap(map);
+
+        var jeongdongjin_marker = new google.maps.Marker({
+          position: jeongdongjin,
+          animation: google.maps.Animation.BOUNCE,
+          icon: setColor("#b4b4b4"),
+        });
+        jeongdongjin_marker.setMap(map);
+
+        var mukho_marker = new google.maps.Marker({
+          position: mukho,
+          animation: google.maps.Animation.BOUNCE,
+          icon: setColor("#D7567F"),
+        });
+        mukho_marker.setMap(map);
+
+        var donghae_marker = new google.maps.Marker({
+          position: donghae,
+          animation: google.maps.Animation.BOUNCE,
+          icon: setColor("#32BEBE"),
+        });
+        donghae_marker.setMap(map);
+
+        var intersaction_marker = new google.maps.Marker({
+          position: intersaction,
+          animation: google.maps.Animation.BOUNCE,
+          icon: setColor("#000"),
+        });
+        intersaction_marker.setMap(map);
+
+        var Path1 = new google.maps.Polyline({
+          path: [Seoul, cheongryangri],
+          strokeColor: "#FF0000",
+          strokeOpacity: 0.8,
+          strokeWeight: 3,
+        });
+        Path1.setMap(map);
+
+        var Path2 = new google.maps.Polyline({
+          path: [cheongryangri, sangbong],
+          strokeColor: "#E56D29",
+          strokeOpacity: 0.8,
+          strokeWeight: 3,
+        });
+        Path2.setMap(map);
+
+        var Path3 = new google.maps.Polyline({
+          path: [sangbong, yangpyeong],
+          strokeColor: "#FFE650",
+          strokeOpacity: 0.8,
+          strokeWeight: 3,
+        });
+        Path3.setMap(map);
+
+        var Path4 = new google.maps.Polyline({
+          path: [yangpyeong, manjong],
+          strokeColor: "#40A940",
+          strokeOpacity: 0.8,
+          strokeWeight: 3,
+        });
+        Path4.setMap(map);
+
+        var Path5 = new google.maps.Polyline({
+          path: [manjong, hoeangseong],
+          strokeColor: "#2828CD",
+          strokeOpacity: 0.8,
+          strokeWeight: 3,
+        });
+        Path5.setMap(map);
+
+        var Path6 = new google.maps.Polyline({
+          path: [hoeangseong, dunnae],
+          strokeColor: "#90AFFF",
+          strokeOpacity: 0.8,
+          strokeWeight: 3,
+        });
+        Path6.setMap(map);
+
+        var Path7 = new google.maps.Polyline({
+          path: [dunnae, pyengchang],
+          strokeColor: "#C964E2",
+          strokeOpacity: 0.8,
+          strokeWeight: 3,
+        });
+        Path7.setMap(map);
+
+        var Path8 = new google.maps.Polyline({
+          path: [pyengchang, jinbu],
+          strokeColor: "#F88EF4",
+          strokeOpacity: 0.8,
+          strokeWeight: 3,
+        });
+        Path8.setMap(map);
+
+        var Path9 = new google.maps.Polyline({
+          path: [jinbu, gangreung],
+          strokeColor: "#A5704B",
+          strokeOpacity: 0.8,
+          strokeWeight: 3,
+        });
+        Path9.setMap(map);
+
+        var Path10 = new google.maps.Polyline({
+          path: [intersaction, jeongdongjin],
+          strokeColor: "#b4b4b4",
+          strokeOpacity: 0.8,
+          strokeWeight: 3,
+        });
+        Path10.setMap(map);
+
+        var Path11 = new google.maps.Polyline({
+          path: [jeongdongjin, mukho],
+          strokeColor: "#D7567F",
+          strokeOpacity: 0.8,
+          strokeWeight: 3,
+        });
+        Path11.setMap(map);
+
+        var Path12 = new google.maps.Polyline({
+          path: [mukho, donghae],
+          strokeColor: "#32BEBE",
+          strokeOpacity: 0.8,
+          strokeWeight: 3,
+        });
+        Path12.setMap(map);
+
+        var infowindow = new google.maps.InfoWindow({
+          content: "Seoul",
+        });
+        infowindow.open(map, Seoul_marker);
+
+        var infowindow = new google.maps.InfoWindow({
+          content: "cheongryangri",
+        });
+        infowindow.open(map, cheongryangri_marker);
+
+        var infowindow = new google.maps.InfoWindow({
+          content: "sangbong",
+        });
+        infowindow.open(map, sangbong_marker);
+
+        var infowindow = new google.maps.InfoWindow({
+          content: "yangpyeong",
+        });
+        infowindow.open(map, yangpyeong_marker);
+
+        var infowindow = new google.maps.InfoWindow({
+          content: "manjong",
+        });
+        infowindow.open(map, manjong_marker);
+
+        var infowindow = new google.maps.InfoWindow({
+          content: "hoeangseong",
+        });
+        infowindow.open(map, hoeangseong_marker);
+
+        var infowindow = new google.maps.InfoWindow({
+          content: "dunnae",
+        });
+        infowindow.open(map, dunnae_marker);
+
+        var infowindow = new google.maps.InfoWindow({
+          content: "pyengchang",
+        });
+        infowindow.open(map, pyengchang_marker);
+
+        var infowindow = new google.maps.InfoWindow({
+          content: "jinbu",
+        });
+        infowindow.open(map, jinbu_marker);
+
+        var infowindow = new google.maps.InfoWindow({
+          content: "gangreung",
+        });
+        infowindow.open(map, gangreung_marker);
+
+        var infowindow = new google.maps.InfoWindow({
+          content: "jeongdongjin",
+        });
+        infowindow.open(map, jeongdongjin_marker);
+
+        var infowindow = new google.maps.InfoWindow({
+          content: "mukho",
+        });
+        infowindow.open(map, mukho_marker);
+
+        var infowindow = new google.maps.InfoWindow({
+          content: "donghae",
+        });
+        infowindow.open(map, donghae_marker);
+      }
+    </script>
+    <!--
+To use this code on your website, get a free API key from Google.
+Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
+-->
+  </body>
+</html>
