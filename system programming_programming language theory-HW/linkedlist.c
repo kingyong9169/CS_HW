@@ -1,94 +1,72 @@
-#include <stdio.h>
+#define _CRT_SECURE_NO_WARNINGS //fopen 보안 경고로 인한 컴파일 에러 방지
+#include <stdio.h> //fopn, fgets, fclose 함수가 선언된 헤더 파일
 #include <stdlib.h>
-#include <sys/time.h>
 
-typedef struct node {
-  int data;
-  struct node* next;
+typedef struct NODE { //연결리스트의 노드 구조체
+	struct NODE* next; //다음 노드의 주소를 저장할 포인터
+	long long int key;
 }node;
 
-node* head;
-node* tail;
-node* cur;
+int main() {
+	int check = 0;
+	int list_count = 0, over_count = 0;
+	int i=0;
+	long long key;
+	FILE* fp = fopen("input.txt", "r");
 
-int k = 0;
-int nodenum;
+	node* head = malloc(sizeof(node));
+	node* curr = malloc(sizeof(node));
+	node* tail = malloc(sizeof(node));
 
-void freenode() {
-  cur = head;
-  tail = head;
+	for (i = 0; i < 100000; i++) {
+		fscanf(fp, "%lld", &key);
+		if (key > 5000)
+			over_count++;
+		if (i == 0) {
+			node* headNode = (node*)malloc(sizeof(node));
+			headNode->key = key;
+			headNode->next = NULL;
 
-  while (cur != NULL) {
-     tail = tail->next;
-     free(cur);
-     cur = tail;
-  }
+			list_count++;
+			head = headNode;
+			tail = headNode;
+		}
+		curr = head;
 
-}
+		if (i != 0) {
+			while (curr) {
+				if (curr->key==key)
+				{
+					check = 1;
+					break;
+				}
+				curr = curr->next;
+			}
+			if (check == 1) {
+				check = 0;
+				continue;
+			}
+			node* newNode = (node*)malloc(sizeof(node));
+			newNode->key = key;
+			newNode->next = NULL;
 
-void add(int key) {
+			tail->next = newNode;
+			tail = newNode;
+			list_count++;
+		}
+	}
+	printf("The total number of nodes: %d\n", list_count);
+	printf("More than 5000 values: %d", over_count);
 
-  for (; k < 1; k++) {
-     node* firstnode = (node*)malloc(sizeof(node));
-     firstnode->data = key;
-     firstnode->next = NULL;
+	node* temp = head;
 
-     nodenum++;
-     head = firstnode;
-     tail = firstnode;
-  }
+	while (temp) { //free
+		free(temp);
+		temp = temp->next;
+	}
+	free(head);
+	free(curr);
+	free(tail);
 
-
-  cur = head;
-
-  while (cur != NULL) {
-     if (key == cur->data)
-        return;
-     cur = cur->next;
-  }
-
-  node* newnode = (node*)malloc(sizeof(node));
-  newnode->data = key;
-  newnode->next = NULL;
-  tail->next = newnode;
-  tail = newnode;
-  nodenum++;
-}
-
-int main(void) {
-  struct timeval startTime, endTime; // 시간을 측정해주는 timeval 구조체를 시작시간과 끝났을 때 시간으로 사용하기 위해 두 개 만들어 줌 
-  gettimeofday(&startTime, NULL); // 시작할 때의 시간을 구함 
-
-  node* head = (node*)malloc(sizeof(node));
-  node* tail = (node*)malloc(sizeof(node));
-  node* cur = (node*)malloc(sizeof(node));
-  int i, over5000 = 0;
-  FILE* fp;
-
-  fp = fopen("input.txt", "r");
-  long long int data;
-
-  for (i = 0; i < 100000; i++) {
-     fscanf(fp, "%lld", &data);
-     if (data > 5000)
-        over5000++;
-     add(data);
-  }
-
-  freenode();
-
-  printf("5000 이상의 수 개수 : %d\n", over5000);
-  printf("노드 개수 : %d\n", nodenum);
-
-  fclose(fp);
-
-  gettimeofday(&endTime, NULL); // 끝났을 때의 시간을 구함 
-
-  endTime.tv_usec = endTime.tv_usec - startTime.tv_usec; // usec은 마이크로초, sec은 초, 끝났을 때 시간에서 시작할 때의 시간을 빼서 실행시간을 구함 
-  endTime.tv_sec = endTime.tv_sec - startTime.tv_sec; //  마찬가지로 끝났을 때의 시간에서 시작할 때의 시간을 빼서 실행시간을 구함 
-
-  endTime.tv_usec += (endTime.tv_sec * 1000000); // endTime.tv_usec에 sec을 더해 총 실행시간을 저장함 
-  printf("Execution Time: %lf sec\n", endTime.tv_usec / 1000000.0); // 실행 시간을 출력해줌, 1000000.0으로 나눠서 초와 마이크로초의 자릿수를 맞춰줌
-
-  return 0;
+	fclose(fp);
 }
