@@ -4,6 +4,7 @@
 
 uint8_t prevTouch = 0;
 uint8_t currTouch = 0;
+uint8_t ledState = 0;
 
 void setup() {
   // put your setup code here, to run once:
@@ -15,12 +16,10 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
   currTouch = digitalRead(TOUCH);
-  if( (prevTouch == HIGH) && (currTouch == LOW)){
-    digitalWrite(LED,LOW);
-    Serial.println("Not Touched!");
-  }
-  else if((prevTouch == LOW) && (currTouch == HIGH)){
-    digitalWrite(LED,HIGH);
+  if((prevTouch == LOW) && (currTouch == HIGH)){
+    ledState = (ledState == 0) ? 1 : 0;
+    // ledState = ledState ^ 1;
+    digitalWrite(LED, ledState);
     Serial.println("Touched!");
   }
   prevTouch = currTouch;
