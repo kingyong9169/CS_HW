@@ -1,5 +1,5 @@
 # 목적함수 : y = w1*x1 + w2*x2 + w3*x3 + w4*x4 + w5*x5 + w6*x6
-#              (x1, x2, x3, x4, x5, x6) =(4, -1, 3.1, 4, -6, -4.5)
+#              (x1, x2, x3, x4, x5, x6) =(10, -2, 4.3, 5, -6, -3.5)
 
 import numpy
 
@@ -34,7 +34,7 @@ def mutation(offspring_crossover): # 돌연변이 연산자
         offspring_crossover[idx, m_ptr] = offspring_crossover[idx, m_ptr] + random_value
     return offspring_crossover
 
-equation_inputs = [4, -1, 3.1, 4, -6, -4.5] # 입력 x의 값
+equation_inputs = [10, -2, 4.3, 5, -6, -3.5] # 입력 x의 값
 num_weights = 6 # 가중치의 개수
 
 sol_per_pop = 8 # 모집단의 염색체 개수
